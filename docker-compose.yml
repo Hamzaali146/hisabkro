@@ -1,0 +1,30 @@
+# Local development — run all 4 services together for testing before deploying to HF Spaces.
+# Usage:
+#   1. Copy .env.example → .env and fill in your Supabase credentials.
+#   2. docker compose up --build
+#   3. Open http://localhost:7860
+
+services:
+  ocr:
+    build: ./ocr-service
+    ports: ["7861:7860"]
+    env_file: .env
+
+  split:
+    build: ./split-service
+    ports: ["7862:7860"]
+    env_file: .env
+
+  settle:
+    build: ./settlement-service
+    ports: ["7863:7860"]
+    env_file: .env
+
+  frontend:
+    build: ./frontend
+    ports: ["7860:7860"]
+    environment:
+      OCR_URL:    http://ocr:7860
+      SPLIT_URL:  http://split:7860
+      SETTLE_URL: http://settle:7860
+    depends_on: [ocr, split, settle]
