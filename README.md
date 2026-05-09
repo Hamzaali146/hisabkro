@@ -1,6 +1,4 @@
-# Distributed AI Receipt Splitter
-
-CS-432 Distributed Computing — Complex Engineering Activity (BE 2022, Spring 2026).
+# Distributed AI Receipt Splitter - HISAB KRO
 
 Friends eat out, photograph the receipt, each diner taps the items they ordered, and the system computes who-pays-whom (with proportional tax + tip allocation).
 
@@ -114,11 +112,3 @@ The CEP rubric will mark you down if you can't explain your code/architecture. T
 | 4 | Frontend + design doc + sustainability section + deployment runbook |
 
 Cross-pair on Supabase schema design — every member must understand the data model.
-
-## Bonus extension ideas (CEP says these earn extra marks)
-
-- **Docker containerization** ✅ already done — see Dockerfiles in each service.
-- **Cloud deployment** ✅ already done — HF Spaces.
-- **Load testing** — `pip install locust`, hit `/claims` from 100 fake clients, screenshot the latency graph for the report.
-- **Edge simulation** — deploy two copies of the OCR Service in different HF Space regions and round-robin between them in the frontend.
-- **Multi-payer settlement** — implement the min-cash-flow algorithm sketched at the bottom of [settlement-service/app.py](settlement-service/app.py).
