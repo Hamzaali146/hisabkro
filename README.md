@@ -1,11 +1,11 @@
 # Distributed AI Receipt Splitter - HISAB KRO
 
-Friends eat out, photograph the receipt, each diner taps the items they ordered, and the system computes who-pays-whom (with proportional tax + tip allocation).
+Friends eat out, photograph the receipt, each diner taps the items they ordered, and the system computes who-pays-whom with proportional tax + tip allocation.
 
-## Architecture (4 distributed components + Supabase)
+## Architecture 4 distributed components and Supabase
 
 ```
-Frontend (Gradio)  ──► OCR Service  ──┐
+Frontend           ──► OCR Service  ──┐
                    ──► Split Service ──┼──► Supabase Postgres
                    ──► Settlement     ──┘
 ```
@@ -28,7 +28,7 @@ Full design rationale, alternatives considered, and sustainability analysis: [do
 
 ## Deployment — full step-by-step
 
-### Step 1 — Set up Supabase (5 min, free)
+### Step 1 — Set up Supabase
 
 1. Go to [supabase.com](https://supabase.com) → New Project. Pick a region close to you (Singapore works well from Pakistan).
 2. Wait for the project to provision.
